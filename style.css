@@ -10,6 +10,7 @@ img {
     justify-content: center;
     align-items: center;
     background-color: white;
+    font-size: 2rem;
 }
 
 .container {
@@ -37,5 +38,4 @@ img {
     padding: 25px;
     background-color: blanchedalmond;
     transition: background-color 0.4s ease;
-    font-size: large;
 }

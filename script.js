@@ -4,6 +4,7 @@ const button = document.querySelector('.dadJoke')
 const randomColor = document.querySelector('.container')
 const bodyCol = document.querySelector('.body')
 
+
 function createJoke() {
 fetch('https://icanhazdadjoke.com/', {headers: { 'Accept': 'application/json' }})
 .then(rawResponse => rawResponse.json())
@@ -11,7 +12,7 @@ fetch('https://icanhazdadjoke.com/', {headers: { 'Accept': 'application/json' }}
 }
 createJoke()
 
-button.addEventListener('click', function () {
+function changeColor() {
     let x = Math.floor(Math.random() * 256);
     let y = Math.floor(Math.random() * 256);
     let z = Math.floor(Math.random() * 256);
@@ -28,5 +29,17 @@ button.addEventListener('click', function () {
         bodyCol.style.backgroundColor = bgColor2;
     }
     bodyColor()
+}
+
+button.addEventListener('click', function () {
+    createJoke();
+    changeColor();
+})   
+
+function update(interval) {
+setInterval(() => {
     createJoke()
-})    
+    changeColor()  
+}, interval * 6000)
+}
+update(1)
