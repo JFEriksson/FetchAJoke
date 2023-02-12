@@ -40,6 +40,6 @@ function update(interval) {
 setInterval(() => {
     createJoke()
     changeColor()  
-}, interval * 6000)
+}, interval * 7000)
 }
 update(1)
